@@ -102,6 +102,46 @@ a:hover{color:var(--deep)}
 .site-footer .wrap{padding-top:32px;padding-bottom:32px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px;font-size:14px;line-height:1.6;color:#B9CDD1}
 .site-footer a{color:#fff}
 
+/* ---------- Planning boundary map ---------- */
+.map-lede{margin:0 0 28px;font-size:18px;line-height:1.6;color:var(--body);max-width:760px}
+.mapx{display:grid;grid-template-columns:320px minmax(0,1fr);gap:28px;align-items:start}
+.mapx-side h3{margin:0 0 12px;font-size:18px;font-weight:700}
+.mapx-list{display:flex;flex-direction:column;gap:10px}
+.mapx-btn{display:flex;align-items:center;gap:14px;width:100%;text-align:left;padding:14px 16px;border-radius:12px;border:2px solid var(--line);background:#fff;font-family:inherit;font-size:16px;color:var(--ink);cursor:pointer;min-height:56px}
+.mapx-btn strong{display:block;font-weight:700;line-height:1.25}
+.mapx-btn .sub{display:block;font-size:14px;color:var(--muted);margin-top:2px}
+.mapx-btn:hover{border-color:var(--teal)}
+.mapx-btn[aria-pressed="true"]{border-color:var(--deep);background:var(--wash)}
+.sw{flex:0 0 22px;height:22px;border-radius:6px;border:3px solid;background:#fff}
+.sw-regional{border-color:#E8573F}.sw-thayne{border-color:#1F8FEA}.sw-bedford{border-color:#34B24A}.sw-turnerville{border-color:#EE8A1E}
+.mapx-link{display:inline-block;margin:16px 18px 0 0;padding:0;border:0;background:none;font-family:inherit;font-size:16px;font-weight:700;color:var(--teal);text-decoration:underline;cursor:pointer}
+.mapx-link:hover{color:var(--deep)}
+.mapx-note{margin:18px 0 0;font-size:14px;line-height:1.5;color:var(--muted)}
+.mapx-status{margin:12px 0 0;font-size:15px;font-weight:600;color:var(--deep);min-height:1.5em}
+.mapx-frame{position:relative;background:#0f2a30;border-radius:16px;overflow:hidden;border:1px solid var(--line)}
+.mapx-frame:fullscreen{border-radius:0;border:0}
+.mapx-view{position:relative;height:min(78vh,780px);overflow:hidden;cursor:grab;touch-action:pan-y;user-select:none;-webkit-user-select:none;outline-offset:-3px}
+.mapx-frame:fullscreen .mapx-view{height:100vh}
+.mapx-view.is-zoomed:active{cursor:grabbing}
+.mapx-stage{position:absolute;left:0;top:0;width:2306px;height:2696px;transform-origin:0 0;will-change:transform}
+.mapx-stage.anim{transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.mapx-stage img{position:absolute;left:0;top:0;width:2306px;height:2696px;max-width:none;pointer-events:none}
+.mapx-stage .base{transition:filter .35s}
+.mapx-stage.dim .base{filter:brightness(.5) saturate(.6)}
+.mapx-stage .ov{opacity:0;transition:opacity .35s}
+.mapx-stage .ov.on{opacity:1}
+.mapx-tools{position:absolute;right:14px;top:14px;display:flex;flex-direction:column;gap:8px}
+.mapx-tools button{width:44px;height:44px;border-radius:10px;border:0;background:#fff;color:var(--ink);font-family:inherit;font-size:24px;font-weight:700;line-height:1;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.35);display:flex;align-items:center;justify-content:center}
+.mapx-tools button:hover{background:var(--wash)}
+.mapx-tools button[hidden]{display:none}
+.mapx-hint{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);margin:0;padding:8px 14px;border-radius:999px;background:rgba(16,39,47,.88);color:#fff;font-size:14px;font-weight:600;opacity:0;transition:opacity .2s;pointer-events:none;white-space:nowrap}
+.mapx-hint.show{opacity:1}
+@media (max-width:900px){
+  .mapx{grid-template-columns:minmax(0,1fr)}
+  .mapx-view{height:70vh;min-height:420px}
+}
+@media (max-width:760px){.map-lede{font-size:16px}.mapx-hint{display:none}}
+
 /* ---------- Survey ---------- */
 .survey-page{min-height:100vh;background-color:var(--deep);
   background-image:linear-gradient(rgba(8,58,70,.8),rgba(8,58,70,.8)),url("../img/public-meeting.jpg");background-size:cover;background-position:center;background-attachment:fixed}

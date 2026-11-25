@@ -29,6 +29,7 @@
     </a>
     <nav class="nav" aria-label="Main">
       <a href="#about">About</a>
+      <a href="#map">Map</a>
       <a href="#faq">Questions</a>
       <a href="#contact">Contact</a>
       <a class="btn btn-deep btn-sm" href="survey/">Take the survey</a>
@@ -75,6 +76,47 @@
           <li><span>Thayne</span><span class="tag">Town system</span></li>
           <li><span>North Forty</span><span class="tag">Subdivision system</span></li>
         </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="map" aria-labelledby="map-title">
+    <div class="wrap">
+      <p class="eyebrow">Planning boundaries</p>
+      <h2 id="map-title">Explore the study area</h2>
+      <p class="map-lede">Choose a boundary to highlight it and zoom in, or zoom and drag the map yourself. You can also download the full map as a PDF.</p>
+      <div class="mapx" id="mapx">
+        <div class="mapx-side">
+          <h3 id="mapx-pick">Highlight a boundary</h3>
+          <div class="mapx-list" role="group" aria-labelledby="mapx-pick">
+            <button type="button" class="mapx-btn" data-layer="regional" aria-pressed="false"><span class="sw sw-regional" aria-hidden="true"></span><span><strong>Regional planning boundary</strong><span class="sub">The overall study area</span></span></button>
+            <button type="button" class="mapx-btn" data-layer="thayne" aria-pressed="false"><span class="sw sw-thayne" aria-hidden="true"></span><span><strong>Thayne municipal boundary</strong><span class="sub">Town of Thayne</span></span></button>
+            <button type="button" class="mapx-btn" data-layer="bedford" aria-pressed="false"><span class="sw sw-bedford" aria-hidden="true"></span><span><strong>Bedford system boundary</strong><span class="sub">Bedford water system</span></span></button>
+            <button type="button" class="mapx-btn" data-layer="turnerville" aria-pressed="false"><span class="sw sw-turnerville" aria-hidden="true"></span><span><strong>Turnerville system boundary</strong><span class="sub">Turnerville water system</span></span></button>
+          </div>
+          <button type="button" class="mapx-link" data-act="all">Show full map</button>
+          <a class="mapx-link" href="assets/maps/Bedford-Turnerville-Planning-Boundary.pdf" download>Download the map (PDF)</a>
+          <p class="mapx-note">Boundaries are approximate and shown for planning purposes. Tap or click a boundary name again to turn the highlight off.</p>
+          <p class="mapx-status" role="status" aria-live="polite">Showing the full map.</p>
+        </div>
+        <div class="mapx-frame">
+          <div class="mapx-view" tabindex="0" role="group" aria-label="Planning boundary map. Use the buttons to zoom, or arrow keys to move and plus and minus to zoom.">
+            <div class="mapx-stage">
+              <img class="base" src="assets/maps/planning-boundary.jpg" width="2306" height="2696" alt="Aerial map of the Thayne, Bedford and Turnerville area with the regional planning boundary and the Thayne, Bedford and Turnerville boundaries outlined" draggable="false">
+              <img class="ov" data-ov="regional" src="assets/maps/ov-regional.png" alt="" draggable="false">
+              <img class="ov" data-ov="thayne" src="assets/maps/ov-thayne.png" alt="" draggable="false">
+              <img class="ov" data-ov="bedford" src="assets/maps/ov-bedford.png" alt="" draggable="false">
+              <img class="ov" data-ov="turnerville" src="assets/maps/ov-turnerville.png" alt="" draggable="false">
+            </div>
+            <p class="mapx-hint" aria-hidden="true">Hold Ctrl and scroll to zoom</p>
+          </div>
+          <div class="mapx-tools" role="group" aria-label="Map controls">
+            <button type="button" data-act="in" aria-label="Zoom in">+</button>
+            <button type="button" data-act="out" aria-label="Zoom out">&minus;</button>
+            <button type="button" data-act="reset" aria-label="Reset map view"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg></button>
+            <button type="button" data-act="full" aria-label="Full screen"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3H3v5M16 3h5v5M8 21H3v-5M16 21h5v-5"/></svg></button>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -136,5 +178,6 @@
     <div>Designed to meet WCAG 2.1 Level AA. To report a barrier, email <a href="mailto:survey@bedfordturnervillewater.com">survey@bedfordturnervillewater.com</a>.</div>
   </div>
 </footer>
+<script src="assets/js/map.js" defer></script>
 </body>
 </html>
