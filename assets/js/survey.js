@@ -85,7 +85,7 @@
     var want = s.want === 'yes' ? 'yes' : 'no';
     return {
       submissionId: s.submissionId,
-      src: s.src || 'direct',
+      src: s.src || 'website',
       elapsedMs: Math.max(0, nowMs - s.startedAt),
       website: s.honeypot || '',
       answers: {
@@ -122,7 +122,7 @@
   var st = {
     screen: 'intro', qid: null, answers: {}, comments: '', area: '', want: '', email: '', touched: false,
     sending: false, sendError: '', honeypot: '', submissionId: uuid(), startedAt: Date.now(),
-    src: (params.get('src') || 'direct').replace(/[^a-z0-9_-]/gi, '').slice(0, 24) || 'direct'
+    src: (params.get('src') || 'website').replace(/[^a-z0-9_-]/gi, '').slice(0, 24) || 'website'
   };
 
   function esc(t) { return String(t).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
