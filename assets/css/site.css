@@ -21,7 +21,8 @@ a:hover{color:var(--deep)}
 .site-header .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;padding-top:16px;padding-bottom:16px}
 .brand{display:flex;align-items:center;gap:14px;text-decoration:none;color:var(--ink)}
 .brand:hover{color:var(--ink)}
-.brand-mark{width:44px;height:44px;border-radius:10px;background:var(--deep);display:flex;align-items:center;justify-content:center;flex:0 0 auto}
+.brand-mark{height:64px;padding:5px 7px;border-radius:12px;background:var(--deep);display:flex;align-items:center;justify-content:center;flex:0 0 auto}
+.brand-logo{height:100%;width:auto;display:block}
 .brand-text{display:flex;flex-direction:column;line-height:1.2}
 .brand-name{font-size:17px;font-weight:700}
 .brand-sub{font-size:13px;color:var(--muted)}
@@ -147,7 +148,7 @@ a:hover{color:var(--deep)}
   background-image:linear-gradient(rgba(8,58,70,.8),rgba(8,58,70,.8)),url("../img/public-meeting.jpg");background-size:cover;background-position:center;background-attachment:fixed}
 .sv-top{padding:18px 32px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px}
 .sv-top .brand{color:#fff}
-.sv-top .brand-mark{background:#fff}
+.sv-top .brand-mark{background:transparent;padding:0}
 .sv-top .brand-sub{color:#DCEDEF}
 .sv-top a.back{color:#fff;font-size:15px;font-weight:600}
 .sv-wrap{display:flex;flex-direction:column;align-items:center;gap:18px;padding:16px 24px 56px}
@@ -211,6 +212,10 @@ fieldset.sv-fs{border:0;margin:0;padding:0;min-width:0}
   .nav a:not(.btn){display:none}
   .site-header .wrap{flex-wrap:nowrap}
   .brand-sub{display:none}
+  .brand-mark{height:54px}
+  .brand-text{min-width:0}
+  .site-header .btn{white-space:nowrap;padding:10px 14px;font-size:14px}
+  .brand-name{font-size:15px;line-height:1.2}
   .hero{background-image:linear-gradient(rgba(8,58,70,.9),rgba(8,58,70,.78)),url("../img/hero-splash.jpg");background-position:center,56% center}
   .hero .wrap{padding-top:36px;padding-bottom:96px;gap:0}
   .hero h1{font-size:34px;line-height:1.1;margin-bottom:16px}
