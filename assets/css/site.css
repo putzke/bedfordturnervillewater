@@ -239,3 +239,24 @@ fieldset.sv-fs{border:0;margin:0;padding:0;min-width:0}
   .sv-paper{display:none}
 }
 @media print{.site-header .nav,.qr-card,.sv-foot{display:none}}
+
+/* ---------- Paper entry page (team only) ---------- */
+.entry-page{background:var(--ground)}
+.en-head{background:var(--deep);color:#fff;padding:26px 0 22px}
+.en-head h1{margin:0 0 6px;font-size:28px;font-weight:800}
+.en-head p{margin:0;font-size:16px;color:#DCEDEF;max-width:720px}
+.en-wrap{max-width:760px;margin:0 auto;padding:0 20px}
+#en{padding:20px 0 60px}
+.en-card{background:#fff;border:1.5px solid var(--line);border-radius:14px;padding:18px 20px;margin-bottom:14px}
+.en-card.is-skipped{background:#F1F5F5;border-style:dashed}
+.en-q{margin:0;font-size:18px;line-height:1.3;font-weight:700;display:flex;gap:10px;align-items:flex-start}
+.en-q .n{flex:0 0 28px;height:28px;border-radius:50%;background:var(--deep);color:#fff;font-size:14px;font-weight:800;display:flex;align-items:center;justify-content:center}
+.en-legend{padding:0;font-size:16px;font-weight:700}
+.en-skip{font-style:normal;font-weight:800;color:var(--deep);white-space:nowrap}
+.en-skipped{margin:0;font-size:15px;color:var(--muted);font-weight:600}
+.en-skipped[hidden],.en-other[hidden]{display:none}
+.en-note{margin:8px 0 0;font-size:14px;color:var(--muted)}
+.en-optional{background:var(--wash)}
+.en-ok{margin:0 0 12px;padding:12px 14px;border-radius:10px;background:#E3F4E5;color:#155724;font-weight:700}
+.en-actions{display:flex;gap:12px;position:sticky;bottom:0;background:var(--ground);padding:12px 0 16px}
+[hidden]{display:none!important}

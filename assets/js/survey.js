@@ -117,6 +117,7 @@
   /* ---------- rendering ---------- */
   var cfg = root.SURVEY_CONFIG || {};
   var mount = document.getElementById('sv');
+  if (!mount) return;
   var params = new URLSearchParams(location.search);
   var st = {
     screen: 'intro', qid: null, answers: {}, comments: '', area: '', want: '', email: '', touched: false,

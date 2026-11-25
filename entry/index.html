@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Paper survey entry · Team only</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/site.css">
+</head>
+<body class="entry-page">
+<header class="en-head">
+  <div class="en-wrap">
+    <h1>Paper survey entry</h1>
+    <p>Team use only. Type in one mailed survey at a time, following the paper form. Answers go to the same Google Sheet as the online survey, tagged &ldquo;paper.&rdquo;</p>
+  </div>
+</header>
+<main class="en-wrap">
+  <form id="en" novalidate>
+    <div class="en-card en-key">
+      <label class="sv-field" style="margin-top:0">Team passcode<input type="password" id="key" autocomplete="off"></label>
+      <p class="en-note">Ask Jeff for the passcode. It is remembered until you close this tab.</p>
+    </div>
+    <div id="qs"></div>
+    <div class="en-card">
+      <h2 class="en-q"><span class="n">8</span>Anything else you would like us to know?</h2>
+      <label class="sv-field">Additional comments (type exactly what is written)<textarea id="comments" rows="5" maxlength="2000"></textarea></label>
+    </div>
+    <div class="en-card en-optional">
+      <h2 class="en-q">Optional section at the bottom of the form</h2>
+      <label class="sv-field" style="margin-top:0">Nearest road or subdivision<input type="text" id="area" maxlength="120"></label>
+      <fieldset class="sv-fs" style="margin-top:14px"><legend class="en-legend">Email updates?</legend>
+        <div class="sv-yn">
+          <label class="sv-opt"><input type="radio" name="updates" value="yes"><span>Yes</span></label>
+          <label class="sv-opt"><input type="radio" name="updates" value="no"><span>No / left blank</span></label>
+        </div>
+      </fieldset>
+      <div id="emailwrap" hidden>
+        <label class="sv-field">Email address<input type="email" id="email" inputmode="email" autocomplete="off" maxlength="200"></label>
+        <p class="sv-err" id="email-err" role="alert" hidden></p>
+      </div>
+    </div>
+    <p class="sv-send-err" id="err" role="alert" hidden></p>
+    <p class="en-ok" id="ok" role="status" aria-live="polite" hidden></p>
+    <div class="en-actions">
+      <button type="submit" class="sv-btn" id="save">Save this survey</button>
+      <button type="button" class="sv-btn ghost" id="clear" style="flex:0 0 140px">Clear form</button>
+    </div>
+  </form>
+</main>
+<script src="../assets/js/config.js"></script>
+<script src="../assets/js/survey.js"></script>
+<script src="../assets/js/entry.js"></script>
+</body>
+</html>

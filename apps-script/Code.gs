@@ -47,9 +47,19 @@ function doPost(e) {
   try {
     var d = JSON.parse((e && e.postData && e.postData.contents) || '{}');
 
-    // Spam checks. Pretend success so bots learn nothing.
-    if (d.website) return json_({ ok: true });
-    if (typeof d.elapsedMs === 'number' && d.elapsedMs < MIN_SECONDS * 1000) return json_({ ok: true });
+    // Paper-form entries come from the team entry page and must carry the ENTRY_KEY script property.
+    var isPaper = false;
+    if (d.entryKey || d.src === 'paper') {
+      var key = PropertiesService.getScriptProperties().getProperty('ENTRY_KEY');
+      if (!key || String(d.entryKey || '') !== key) return json_({ ok: false, error: 'key' });
+      isPaper = true;
+    }
+
+    // Spam checks for public submissions. Pretend success so bots learn nothing.
+    if (!isPaper) {
+      if (d.website) return json_({ ok: true });
+      if (typeof d.elapsedMs === 'number' && d.elapsedMs < MIN_SECONDS * 1000) return json_({ ok: true });
+    }
 
     var id = clean_(d.submissionId, 64);
     if (!id) return json_({ ok: false, error: 'bad request' });
@@ -68,7 +78,7 @@ function doPost(e) {
     var now = new Date();
     resp.appendRow([
       now,
-      clean_(d.src, 24),
+      isPaper ? 'paper' : clean_(d.src, 24),
       label_('community', a.community), clean_(a.communityOther, 300),
       label_('source', a.source),
       label_('system', a.system), clean_(a.systemOther, 300),
@@ -77,7 +87,7 @@ function doPost(e) {
       label_('waterEffect', a.waterEffect), clean_(a.waterEffectOther, 300),
       clean_(d.comments, MAX_FIELD),
       clean_(d.area, 120),
-      Math.round((Number(d.elapsedMs) || 0) / 1000),
+      isPaper ? '' : Math.round((Number(d.elapsedMs) || 0) / 1000),
       id
     ]);
 

@@ -20,3 +20,9 @@ Keep the Sheet itself private. Only the web app URL is public, and it can only a
 
 ## QR codes
 `qr/` holds one code per channel (`?src=` tags the Channel column): mailer, flyer, booth, poster. If the domain changes, tell Claude and the codes get regenerated.
+
+## Paper survey entry (team only)
+The page `/entry/` (not linked anywhere, hidden from search) lets the team type in mailed paper surveys. Rows land in the same Sheet with Channel = `paper`.
+1. In Apps Script open **Project Settings > Script properties > Add script property**. Name `ENTRY_KEY`, value = a team passcode of your choosing.
+2. Replace the script with the new `Code.gs`, then **Deploy > Manage deployments > Edit (pencil) > Version: New version > Deploy**. The `/exec` URL stays the same.
+3. Share the passcode with the team only. Change `ENTRY_KEY` any time to lock out old copies.
