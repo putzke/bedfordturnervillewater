@@ -132,6 +132,9 @@ a:hover{color:var(--deep)}
 .mapx-stage.dim .base{filter:brightness(.5) saturate(.6)}
 .mapx-stage .ov{opacity:0;transition:opacity .35s}
 .mapx-stage .ov.on{opacity:1}
+.mapx-stage .ov.on{animation:ovpulse 2.8s ease-in-out .5s infinite}
+@keyframes ovpulse{0%,100%{opacity:1}50%{opacity:.55}}
+@media (prefers-reduced-motion:reduce){.mapx-stage .ov.on{animation:none}}
 .mapx-tools{position:absolute;right:14px;top:14px;display:flex;flex-direction:column;gap:8px}
 .mapx-tools button{width:44px;height:44px;border-radius:10px;border:0;background:#fff;color:var(--ink);font-family:inherit;font-size:24px;font-weight:700;line-height:1;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.35);display:flex;align-items:center;justify-content:center}
 .mapx-tools button:hover{background:var(--wash)}
